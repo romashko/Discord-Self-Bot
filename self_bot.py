@@ -16,7 +16,7 @@ initial_extensions = [
     'custom',
     'penis'
 ]
-    
+
 # Set's bot's desciption and prefixes in a list
 description = "FG17: Discord Selfbot"
 bot = commands.Bot(command_prefix=["self."], description=description, self_bot=True)
@@ -35,7 +35,7 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print("---------------------------")
-    
+
     print("Modules Loaded:")
     for extension in initial_extensions:
         try:
@@ -47,7 +47,7 @@ async def on_ready():
     print("---------------------------")
 
     await bot.change_presence(afk=True, status=discord.Status.invisible)
-    
+
 @bot.event
 async def on_command_error(error, ctx):
     if isinstance(error, commands.MissingRequiredArgument) or isinstance(error, commands.BadArgument):
